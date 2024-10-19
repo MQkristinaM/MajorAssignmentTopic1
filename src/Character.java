@@ -39,9 +39,9 @@ public class Character {
         return defense;
     }
 
-    // public int defend(){
+    // public int defending( int i){
     //     // Random randomd = new Random();
-    //     // return randomd(7);
+    //     // return randomd(i);
     // }
 
     @Override
