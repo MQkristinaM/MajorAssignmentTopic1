@@ -1,18 +1,19 @@
-## Getting Started
+## What problem your application solves
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Project Structure
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
+_The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `lib`: the folder to maintain dependencies_
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+  ##  `TurnBasedRPG.java`
+  The main file that displays the turn of the battle, also displays current characters with their stats
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+  ##  `Character.java`
+  Character file used to implement 
 
-## Dependency Management
+  ##  `Game.java`
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+  ##  `Team.java`
+
