@@ -12,8 +12,8 @@ public class TurnBasedRPG {
     }
 
     public void setup() {
-        teamA.addCharacter(new Character("Aang", 30, 8, 2));
-        teamA.addCharacter(new Character("Katara", 28, 7, 3));
+        teamA.addCharacter(new Character("Bingus", 30, 8, 2));
+        teamA.addCharacter(new Character("Cheeseball", 28, 7, 3));
         teamB.addCharacter(new Character("Deadpool", 35, 10, 4));
         teamB.addCharacter(new Character("Wolverine", 40, 9, 5));
     }
