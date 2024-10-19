@@ -10,12 +10,13 @@ public class TurnBasedRPG {
         teamB = new Team();
         scanner = new Scanner(System.in);
     }
-1
+
+
     public void setup() {
         teamA.addCharacter(new Character("Bingus", 30, 8, 4));
         teamA.addCharacter(new Character("Cheeseball", 35, 7, 5));
-        teamB.addCharacter(new Character("Floppa", 35, 8, 3));
-        teamB.addCharacter(new Character("Gato", 40, 9, 2));
+        teamB.addCharacter(new Character("Floppa", 35, 9, 2));
+        teamB.addCharacter(new Character("Gato", 40, 8, 3));
     }
 
     public void battle() {
@@ -29,7 +30,8 @@ public class TurnBasedRPG {
             if (attacker != null && defender != null) {
                 System.out.println(attacker.getName() + "'s turn! Choose an action:");
                 System.out.println("1. Attack " + defender.getName());
-                System.out.println("2. View Status");
+                System.out.println("2. Defend " + attacker.getName());
+                System.out.println("3. View Status");
 
                 int choice = scanner.nextInt();
                 if (choice == 1) {
@@ -44,6 +46,12 @@ public class TurnBasedRPG {
                         System.out.println(defender.getName() + " has been defeated!");
                     }
                 } else if (choice == 2) {
+                    // defense variable - next attack
+                  //  int defend = defender.defend();
+                  System.out.println(defender.getName() + " is preparing defenses");
+
+                    
+                } else if (choice == 3) {
                     System.out.println("Current Status:");
                     displayStatus(currentAttacker);
                     displayStatus(currentDefender);

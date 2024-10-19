@@ -31,13 +31,18 @@ public class Character {
     }
 
     public int attack() {
-        Random random = new Random();
-        return strength + random.nextInt(6); // Random damage between 0-5
+        Random randoma = new Random();
+        return strength + randoma.nextInt(6); // Random damage between 0-5
     }
 
     public int getDefense() {
         return defense;
     }
+
+    // public int defend(){
+    //     // Random randomd = new Random();
+    //     // return randomd(7);
+    // }
 
     @Override
     public String toString() {
