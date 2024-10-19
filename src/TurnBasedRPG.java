@@ -10,12 +10,12 @@ public class TurnBasedRPG {
         teamB = new Team();
         scanner = new Scanner(System.in);
     }
-
+1
     public void setup() {
-        teamA.addCharacter(new Character("Bingus", 30, 8, 2));
-        teamA.addCharacter(new Character("Cheeseball", 28, 7, 3));
-        teamB.addCharacter(new Character("Bongo", 35, 10, 4));
-        teamB.addCharacter(new Character("Gato", 40, 9, 5));
+        teamA.addCharacter(new Character("Bingus", 30, 8, 4));
+        teamA.addCharacter(new Character("Cheeseball", 35, 7, 5));
+        teamB.addCharacter(new Character("Floppa", 35, 8, 3));
+        teamB.addCharacter(new Character("Gato", 40, 9, 2));
     }
 
     public void battle() {
