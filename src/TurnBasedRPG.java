@@ -28,6 +28,18 @@ public class TurnBasedRPG {
             Character defender = currentDefender.getNextAliveCharacter();
 
             if (attacker != null && defender != null) {
+                System.out.print("Attacker  " + attacker.getName() + " " + attacker.getHealthPoints() + "hp [" );
+                for(int i = 0 ; i < + attacker.getHealthPoints()/2; i++){
+                    System.out.print("█");
+                }
+                System.out.println("] ");
+                System.out.println(" ");
+                System.out.print("Defender  " + defender.getName() + " " + defender.getHealthPoints() + "hp [" );
+                for(int i = 0 ; i < + defender.getHealthPoints()/2; i++){
+                    System.out.print("█");
+                }
+                System.out.println("] ");
+                System.out.println(" ");
                 System.out.println(attacker.getName() + "'s turn! Choose an action:");
                 System.out.println("1. Attack " + defender.getName());
                 System.out.println("2. Defend " + attacker.getName());
@@ -43,7 +55,10 @@ public class TurnBasedRPG {
                     System.out.println(defender.getName() + " took " + actualDamage + " points of damage!");
 
                     if (!defender.isAlive()) {
+                        System.out.println(" ");
                         System.out.println(defender.getName() + " has been defeated!");
+                        System.out.println(" ");
+                        //System.out.println("A new challenger " + defender.getName() + " has arrived!");
                     }
                 } else if (choice == 2) {
                     // defense variable - next attack
