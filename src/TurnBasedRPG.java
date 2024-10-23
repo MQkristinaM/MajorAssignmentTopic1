@@ -31,6 +31,7 @@ public class TurnBasedRPG {
             Character defender = currentDefender.getNextAliveCharacter();
 
             if (attacker != null && defender != null) {
+                System.out.println("------------------------------");
                 System.out.print("Attacker  " + attacker.getName() + " " + attacker.getHealthPoints() + "hp [" );
                 for(int i = 0 ; i < attacker.getHealthPoints(); i++){
                     System.out.print("■");
@@ -62,11 +63,12 @@ public class TurnBasedRPG {
                     if (!defender.isAlive()) {
                         System.out.println(" ");
                         System.out.println(" ");
-                        System.out.println(defender.getName() + " has been defeated!");
+                        System.out.println("░ ▒ ▓" + defender.getName() + " has been defeated!" + "▓ ▒ ░");
                         System.out.println(" ");
                         System.out.println(" ");
+                        if(currentDefender.getNextAliveCharacter() != null){
                         System.out.println("A new challenger " + currentDefender.getNextAliveCharacter() + " has arrived!");
-
+                        }
                     }
                 } else if (choice == 2) {
                     attacker.setDefending(true);
@@ -102,9 +104,11 @@ public class TurnBasedRPG {
         }
 
         if (teamA.isAlive()) {
-            System.out.println("Team A wins!");
+            System.out.println("░ ▒ ▓ Team A wins! ▓ ▒ ░");
+            System.out.println(" "); 
         } else {
-            System.out.println("Team B wins!");
+            System.out.println("░ ▒ ▓ Team B wins! ▓ ▒ ░");
+            System.out.println(" "); 
         }
     }
 
