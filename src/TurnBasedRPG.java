@@ -32,13 +32,13 @@ public class TurnBasedRPG {
 
             if (attacker != null && defender != null) {
                 System.out.print("Attacker  " + attacker.getName() + " " + attacker.getHealthPoints() + "hp [" );
-                for(int i = 0 ; i < + attacker.getHealthPoints()/2; i++){
+                for(int i = 0 ; i < attacker.getHealthPoints(); i++){
                     System.out.print("■");
                 }
                 System.out.println("] ");
                 System.out.println(" ");
                 System.out.print("Defender  " + defender.getName() + " " + defender.getHealthPoints() + "hp [" );
-                for(int i = 0 ; i < + defender.getHealthPoints()/2; i++){
+                for(int i = 0 ; i < defender.getHealthPoints(); i++){
                     System.out.print("■");
                 }
                 System.out.println("] ");
@@ -55,22 +55,28 @@ public class TurnBasedRPG {
                     int actualDamage = Math.max(0, damage - defender.getDefense());
                     defender.takeDamage(actualDamage);
 
+                    System.out.println(" ");
                     System.out.println(attacker.getName() + " attacked " + defender.getName() + "!");
                     System.out.println(defender.getName() + " took " + actualDamage + " points of damage!");
 
                     if (!defender.isAlive()) {
                         System.out.println(" ");
+                        System.out.println(" ");
                         System.out.println(defender.getName() + " has been defeated!");
                         System.out.println(" ");
-                        //System.out.println("A new challenger " + defender.getName() + " has arrived!");
+                        System.out.println(" ");
+                        System.out.println("A new challenger " + currentDefender.getNextAliveCharacter() + " has arrived!");
+
                     }
                 } else if (choice == 2) {
                     attacker.setDefending(true);
+                    System.out.println(" ");
                     System.out.println(attacker.getName() + " is defending and will take less damage next turn!");
                 
                 } else if (choice == 3) {
                     int healAmount = random.nextInt(6) + 5;
                     attacker.heal(healAmount);
+                    System.out.println(" ");
                     System.out.println(attacker.getName() + " heals for " + healAmount + " points of health!");
             
                 } else if (choice == 4) {
