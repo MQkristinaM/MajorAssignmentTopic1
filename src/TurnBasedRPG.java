@@ -1,22 +1,25 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class TurnBasedRPG {
     private Team teamA;
     private Team teamB;
     private Scanner scanner;
+    private Random random;
 
     public TurnBasedRPG() {
         teamA = new Team();
         teamB = new Team();
         scanner = new Scanner(System.in);
+        random = new Random();
     }
 
 
     public void setup() {
-        teamA.addCharacter(new Character("Bingus", 30, 8, 4));
-        teamA.addCharacter(new Character("Cheeseball", 35, 7, 5));
-        teamB.addCharacter(new Character("Floppa", 35, 9, 2));
-        teamB.addCharacter(new Character("Gato", 40, 8, 3));
+        teamA.addCharacter(new Character("Bingus", "Sphynx", "Rouge", 30, 8, 4));
+        teamA.addCharacter(new Character("Cheeseball", "Ginger", "Wizard", 35, 7, 5));
+        teamB.addCharacter(new Character("Floppa", "Caracal","Paladin", 35, 9, 2));
+        teamB.addCharacter(new Character("Gato","Munchkin", "Thief" ,40, 8, 3));
     }
 
     public void battle() {
@@ -43,7 +46,8 @@ public class TurnBasedRPG {
                 System.out.println(attacker.getName() + "'s turn! Choose an action:");
                 System.out.println("1. Attack " + defender.getName());
                 System.out.println("2. Defend " + attacker.getName());
-                System.out.println("3. View Status");
+                System.out.println("3. Heal " + attacker.getName());
+                System.out.println("4. View Status of team");
 
                 int choice = scanner.nextInt();
                 if (choice == 1) {
@@ -61,15 +65,20 @@ public class TurnBasedRPG {
                         //System.out.println("A new challenger " + defender.getName() + " has arrived!");
                     }
                 } else if (choice == 2) {
-                    // defense variable - next attack
-                  //  int defend = defender.defend();
-                  System.out.println(defender.getName() + " is preparing defenses");
-
-                    
+                    attacker.setDefending(true);
+                    System.out.println(attacker.getName() + " is defending and will take less damage next turn!");
+                
                 } else if (choice == 3) {
-                    System.out.println("Current Status:");
+                    int healAmount = random.nextInt(6) + 5;
+                    attacker.heal(healAmount);
+                    System.out.println(attacker.getName() + " heals for " + healAmount + " points of health!");
+            
+                } else if (choice == 4) {
+                    System.out.println(" ");
+                    System.out.println("Current Status of team:");
+                    System.out.println(" ");                    
                     displayStatus(currentAttacker);
-                    displayStatus(currentDefender);
+                    System.out.println(" ");                    
                     continue; // Skip the turn if viewing status
                 } else {
                     System.out.println("Invalid choice, please try again.");
@@ -83,6 +92,7 @@ public class TurnBasedRPG {
 
                 System.out.println();
             }
+            attacker.setDefending(false);
         }
 
         if (teamA.isAlive()) {
