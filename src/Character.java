@@ -46,27 +46,15 @@ public class Character {
         this.healthPoints -= damage;
         if (this.healthPoints < 0) this.healthPoints = 0;
     }
+
     public void takeDamage(int damage,String name) {
         if (defending) {
-            damage /= 2; // 防御时中毒效果受伤减半
+            damage /= 2; 
             System.out.println(name + " defended and reduced damage to " + damage + "!");
         }
         this.healthPoints -= damage;
         if (this.healthPoints < 0) this.healthPoints = 0;
     }
-
-    public void reduce(int attack,int defenseValue) {
-        if (defending) {
-            attack /= 2; // 防御时效果减半
-            defenseValue /= 2;
-            }
-        this.strength+=attack;
-        this.defense+=defenseValue;
-        if(this.strength<0) this.strength=0;
-        if(this.defense<0) this.defense=0;
-        System.out.println(name + " defended and reduced strength to " + strength + ",defense to "+defense+"!");
-
-    }    
 
     public boolean isAlive() {
         return healthPoints > 0;

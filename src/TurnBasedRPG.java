@@ -14,7 +14,6 @@ public class TurnBasedRPG {
         random = new Random();
     }
 
-
     public void setup() {
         teamA.addCharacter(new Character("Bingus", "Sphynx", "Rouge", 30, 8, 4));
         teamA.addCharacter(new Character("Cheeseball", "Ginger", "Wizard", 35, 7, 5));
@@ -67,7 +66,8 @@ public class TurnBasedRPG {
                         System.out.println(" ");
                         System.out.println(" ");
                         if(currentDefender.getNextAliveCharacter() != null){
-                        System.out.println("A new challenger " + currentDefender.getNextAliveCharacter() + " has arrived!");
+                        System.out.println("A new challenger has arrived!");
+                        System.out.println(currentDefender.getNextAliveCharacter());
                         }
                     }
                 } else if (choice == 2) {
