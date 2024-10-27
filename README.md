@@ -1,8 +1,8 @@
 
 ## Group 5 work allocation:
-48426148 - Liam 33% | core code structure start of project
-48529826 - Emily 20% | enhanced classes and methods (defense), game text design
-48428124 - Kristina 22% | compliling project files, game text design, uml diagram
+- Liam 33% | core code structure start of project
+- Emily 20% | enhanced classes and methods (defense), game text design
+- Kristina 22% | compliling project files, game text design, uml diagram
 - Yanyi (Candice) 25% | extra classes and methods (heal, defense), uml diagram
 
 
