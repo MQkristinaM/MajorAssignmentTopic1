@@ -81,15 +81,12 @@ public class Character {
         return defense;
     }
 
-    // public int defending( int i){
-    //     // Random randomd = new Random();
-    //     // return randomd(i);
-    // }
-
     public void heal(int healAmount) {
         healthPoints += healAmount;
         if (healthPoints > maxHealthPoints) {
-            healthPoints = maxHealthPoints;
+                healthPoints = maxHealthPoints;
+                System.out.println(" ");
+                System.out.println(name + " is already at max health!");
         }
     }
 
