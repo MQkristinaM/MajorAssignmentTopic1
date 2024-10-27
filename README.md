@@ -9,7 +9,7 @@
 ## How to run:
 
   ##  `Game.java`
-  Run project through this file, it will prompt the debugger which displays the main game project.
+  Run project through this file, it will prompt the debugger which displays the main game project. The use of scanner will allow the player to input commands.
   Current playable characters and current hp levels
 
   Each turn the player(s) will choose what action to proceed with.
